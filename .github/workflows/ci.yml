@@ -1,26 +1,23 @@
 name: ci
 on:
   push:
-    branches: [ patch1 ]
+    branches: [patch1]
   pull_request:
-    branches: [ master ]
-
+    branches: [master]
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     steps:
-    - uses: actions/checkout@v2
-    - name:  Use Node.js
-    - uses:  actions/setup-node@v1
-      with:
-          registry-url: hhtps://npm.pkg.github.coom
-          node-version: 8.x
-          scope: '@dalenguyen'
-    - name: npm install,build, and test
-      run:  |
-            npm install
-            npm run build --if-presnet
-            npm test
-    
+        - uses: actions/checkout@v1
+        - name:  Use Node.js
+        - uses:  actions/setup-node@v1
+          with:
+              registry-url: hhtps://npm.pkg.github.coom
+              node-version: 8.x
+              scope: '@dalenguyen'
+        - name: npm install,build, and test
+          run:  |
+                npm install
+                npm run build --if-presnet
+                npm test
+
