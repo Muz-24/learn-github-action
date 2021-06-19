@@ -1,0 +1,12 @@
+name: Jekyll site CI
+
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build the site in the jekyll/builder container
+      run: |
+         echo 'test 1'
+         echo 'test2'
